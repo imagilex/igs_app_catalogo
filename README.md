@@ -1,1 +1,1 @@
-# igs_app_catalogo
+# iGrowSoft - Base App (app / module) -  igs_app_catalogo
