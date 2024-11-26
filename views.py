@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from igs_app_base.views import GenericAppRootView
 
-# Create your views here.
+
+class Catalogos(GenericAppRootView):
+    app = "catalogo"
+    titulo = "Catalogos"

@@ -1,3 +1,2 @@
-from django.db import models
-
-# Create your models here.
+from .bootstrapcolor.models import BootstrapColor
+from .tipoparametro.models import TipoParametro

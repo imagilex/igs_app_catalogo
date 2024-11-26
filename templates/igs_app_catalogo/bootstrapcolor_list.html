@@ -1,0 +1,36 @@
+{% extends "html/html_struct.html" %}
+
+{% block content%}
+    {% if object_list %}
+        <table id="main-data-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Clase Bootstrap</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Clase Bootstrap</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            {% for reg in object_list %}
+                <tr>
+                    <td><input class="form-check-input" type="checkbox" value="{{ reg.pk }}" name="pk" /></td>
+                    <td><a href="{% url 'bootstrapcolor_read' reg.pk %}">{{ reg.nombre }}</a></td>
+                    <td>{{ reg.clase_color }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <script type="text/javascript">
+        let update_url = `{% url 'bootstrapcolor_update' pk=0 %}`;
+        let delete_many_url = `{% url 'bootstrapcolor_delete_many' %}`;
+    </script>
+{% endblock %}

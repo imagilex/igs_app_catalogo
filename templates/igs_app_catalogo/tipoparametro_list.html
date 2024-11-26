@@ -1,0 +1,36 @@
+{% extends "html/html_struct.html" %}
+
+{% block content%}
+    {% if object_list %}
+        <table id="main-data-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Tipo Interno</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Tipo Interno</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            {% for reg in object_list %}
+                <tr>
+                    <td><input class="form-check-input" type="checkbox" value="{{ reg.pk }}" name="pk" /></td>
+                    <td><a href="{% url 'tipoparametro_read' reg.pk %}">{{ reg.nombre }}</a></td>
+                    <td>{{ reg.tipo_interno }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <script type="text/javascript">
+        let update_url = `{% url 'tipoparametro_update' pk=0 %}`;
+        let delete_many_url = `{% url 'tipoparametro_delete_many' %}`;
+    </script>
+{% endblock %}
