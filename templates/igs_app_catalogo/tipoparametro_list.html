@@ -1,6 +1,7 @@
 {% extends "html/html_struct.html" %}
 
 {% block content%}
+    <!-- igs_app_catalogo/tipoparametro_list.html start block content -->
     {% if object_list %}
         <table id="main-data-table">
             <thead>
@@ -33,4 +34,5 @@
         let update_url = `{% url 'tipoparametro_update' pk=0 %}`;
         let delete_many_url = `{% url 'tipoparametro_delete_many' %}`;
     </script>
+    <!-- igs_app_catalogo/tipoparametro_list.html end block content -->
 {% endblock %}
